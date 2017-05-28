@@ -241,6 +241,159 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/05/28/iOS-OC-为button添加下划线/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wougle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/Loc.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴戈的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/28/iOS-OC-为button添加下划线/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-28T21:01:48+08:00">
+                2017-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近做的一个项目里需要在button里的titleLable里添加下滑线，自己搞了半小时，重写了个button。</p>
+<p>贴代码：</p>
+<p><strong>UnderlineButton.h</strong></p>
+<blockquote>
+<p><em>#import<uikit uikit.h=""></uikit></em></p>
+<p><em>@interface UnderlineButton : UIButton</em></p>
+<p><em>{</em></p>
+<p><em>UIColor \</em>lineColor;*</p>
+<p><em>}</em></p>
+<p><em>-(void)setColor:(UIColor\</em>)color;*</p>
+<p><em>@end</em></p>
+</blockquote>
+<p><strong>UnderlineButton.m</strong></p>
+<blockquote>
+<p>#import “UnderlineButton.h”</p>
+<p>@implementation UnderlineButton</p>
+<p>- (id)initWithFrame:(CGRect)frame</p>
+<p>{</p>
+<p>self = [super initWithFrame:frame];</p>
+<p>if (self) {</p>
+<p>}</p>
+<p>return self;</p>
+<p>}</p>
+<p>-(void)setColor:(UIColor *)color{</p>
+<p>lineColor = [color copy];</p>
+<p>[self setNeedsDisplay];</p>
+<p>}</p>
+<p>- (void) drawRect:(CGRect)rect {</p>
+<p>CGRect textRect = self.titleLabel.frame;</p>
+<p>CGContextRef contextRef = UIGraphicsGetCurrentContext();</p>
+<p>CGFloat descender = self.titleLabel.font.descender;</p>
+<p>if([lineColor isKindOfClass:[UIColor class]]){</p>
+<p>CGContextSetStrokeColorWithColor(contextRef, lineColor.CGColor);</p>
+<p>}</p>
+<p>CGContextMoveToPoint(contextRef, textRect.origin.x, textRect.origin.y + textRect.size.height + descender+1);</p>
+<p>CGContextAddLineToPoint(contextRef, textRect.origin.x + textRect.size.width, textRect.origin.y + textRect.size.height + descender+1);</p>
+<p>CGContextClosePath(contextRef);</p>
+<p>CGContextDrawPath(contextRef, kCGPathStroke);</p>
+<p>}</p>
+<p>@end</p>
+</blockquote>
+<p>直接复制粘贴即可。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/05/24/iOS-OC-property的属性理解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -540,7 +693,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

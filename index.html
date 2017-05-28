@@ -312,44 +312,48 @@
             <p>最近做的一个项目里需要在button里的titleLable里添加下滑线，自己搞了半小时，重写了个button。</p>
 <p>贴代码：</p>
 <p><strong>UnderlineButton.h</strong></p>
-<blockquote>
-<p><em>#import<uikit uikit.h=""></uikit></em></p>
-<p><em>@interface UnderlineButton : UIButton</em></p>
-<p><em>{</em></p>
-<p><em>UIColor \</em>lineColor;*</p>
-<p><em>}</em></p>
-<p><em>-(void)setColor:(UIColor\</em>)color;*</p>
-<p><em>@end</em></p>
-</blockquote>
-<p><strong>UnderlineButton.m</strong></p>
-<blockquote>
-<p>#import “UnderlineButton.h”</p>
-<p>@implementation UnderlineButton</p>
-<p>- (id)initWithFrame:(CGRect)frame</p>
-<p>{</p>
-<p>self = [super initWithFrame:frame];</p>
-<p>if (self) {</p>
-<p>}</p>
-<p>return self;</p>
-<p>}</p>
-<p>-(void)setColor:(UIColor *)color{</p>
-<p>lineColor = [color copy];</p>
-<p>[self setNeedsDisplay];</p>
-<p>}</p>
-<p>- (void) drawRect:(CGRect)rect {</p>
-<p>CGRect textRect = self.titleLabel.frame;</p>
-<p>CGContextRef contextRef = UIGraphicsGetCurrentContext();</p>
-<p>CGFloat descender = self.titleLabel.font.descender;</p>
-<p>if([lineColor isKindOfClass:[UIColor class]]){</p>
-<p>CGContextSetStrokeColorWithColor(contextRef, lineColor.CGColor);</p>
-<p>}</p>
-<p>CGContextMoveToPoint(contextRef, textRect.origin.x, textRect.origin.y + textRect.size.height + descender+1);</p>
-<p>CGContextAddLineToPoint(contextRef, textRect.origin.x + textRect.size.width, textRect.origin.y + textRect.size.height + descender+1);</p>
-<p>CGContextClosePath(contextRef);</p>
-<p>CGContextDrawPath(contextRef, kCGPathStroke);</p>
-<p>}</p>
-<p>@end</p>
-</blockquote>
+<pre><code class="*#import&lt;UIKit/UIKit.h&gt;*">
+</code></pre>
+<p>```  <em>@interface UnderlineButton : UIButton</em></p>
+<pre><code>```  *{*
+</code></pre><p>```  <em>UIColor \</em>lineColor;*</p>
+<pre><code>```  *}*
+</code></pre><pre><code class="*-(void)setColor:(UIColor\*)color;*">
+</code></pre>
+<pre><code class="*@end*">
+**UnderlineButton.m**
+
+```  \#import &quot;UnderlineButton.h&quot;
+</code></pre>
+<p>```  @implementation UnderlineButton</p>
+<pre><code>```  \- (id)initWithFrame:(CGRect)frame
+</code></pre><pre><code class="{">
+</code></pre>
+<p>```  self = [super initWithFrame:frame];</p>
+<pre><code>```  if (self) {
+</code></pre><pre><code class="}">
+</code></pre>
+<p>```  return self;</p>
+<pre><code>```  }
+</code></pre><p>```  -(void)setColor:(UIColor *)color{</p>
+<pre><code>```  lineColor = [color copy];
+</code></pre><p>```  [self setNeedsDisplay];</p>
+<pre><code>```  }
+</code></pre><p>```  - (void) drawRect:(CGRect)rect {</p>
+<pre><code>```  CGRect textRect = self.titleLabel.frame;
+</code></pre><p>```  CGContextRef contextRef = UIGraphicsGetCurrentContext();</p>
+<pre><code>```  CGFloat descender = self.titleLabel.font.descender;
+</code></pre><p>```  if([lineColor isKindOfClass:[UIColor class]]){</p>
+<pre><code>```  CGContextSetStrokeColorWithColor(contextRef, lineColor.CGColor);
+</code></pre><pre><code class="}">
+</code></pre>
+<p>```  CGContextMoveToPoint(contextRef, textRect.origin.x, textRect.origin.y + textRect.size.height + descender+1);</p>
+<pre><code>```  CGContextAddLineToPoint(contextRef, textRect.origin.x + textRect.size.width, textRect.origin.y + textRect.size.height + descender+1);
+</code></pre><pre><code class="CGContextClosePath(contextRef);">
+</code></pre>
+<p>```  CGContextDrawPath(contextRef, kCGPathStroke);</p>
+<pre><code>```  }
+</code></pre><p>```  @end</p>
 <p>直接复制粘贴即可。</p>
 
           

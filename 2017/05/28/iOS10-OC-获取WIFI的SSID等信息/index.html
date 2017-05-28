@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="最近做的一个项目里需要在button里的titleLable里添加下滑线，自己搞了半小时，重写了个button。 贴代码： UnderlineButton.h 12345678910111213141516171819#import&amp;lt;UIKit/UIKit.h&amp;gt;  @interface UnderlineButton : UIButton  &amp;#123;  UIColor *lineC">
+<meta name="description" content="首先添加框架:SystemConfiguration.framework 然后引用#import 剩下的就是代码： 1234567891011121314151617- (NSString *)currentWifiSSID &amp;#123;NSString *ssid = nil;NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfac">
 <meta name="keywords" content="objective-c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS OC 为button添加下划线">
-<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/05/28/iOS-OC-为button添加下划线/index.html">
+<meta property="og:title" content="iOS10 OC 获取WIFI的SSID等信息">
+<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/05/28/iOS10-OC-获取WIFI的SSID等信息/index.html">
 <meta property="og:site_name" content="吴戈的博客">
-<meta property="og:description" content="最近做的一个项目里需要在button里的titleLable里添加下滑线，自己搞了半小时，重写了个button。 贴代码： UnderlineButton.h 12345678910111213141516171819#import&amp;lt;UIKit/UIKit.h&amp;gt;  @interface UnderlineButton : UIButton  &amp;#123;  UIColor *lineC">
-<meta property="og:updated_time" content="2017-05-28T13:23:25.000Z">
+<meta property="og:description" content="首先添加框架:SystemConfiguration.framework 然后引用#import 剩下的就是代码： 1234567891011121314151617- (NSString *)currentWifiSSID &amp;#123;NSString *ssid = nil;NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfac">
+<meta property="og:updated_time" content="2017-05-28T13:25:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS OC 为button添加下划线">
-<meta name="twitter:description" content="最近做的一个项目里需要在button里的titleLable里添加下滑线，自己搞了半小时，重写了个button。 贴代码： UnderlineButton.h 12345678910111213141516171819#import&amp;lt;UIKit/UIKit.h&amp;gt;  @interface UnderlineButton : UIButton  &amp;#123;  UIColor *lineC">
+<meta name="twitter:title" content="iOS10 OC 获取WIFI的SSID等信息">
+<meta name="twitter:description" content="首先添加框架:SystemConfiguration.framework 然后引用#import 剩下的就是代码： 1234567891011121314151617- (NSString *)currentWifiSSID &amp;#123;NSString *ssid = nil;NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfac">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/05/28/iOS-OC-为button添加下划线/"/>
+  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/05/28/iOS10-OC-获取WIFI的SSID等信息/"/>
 
 
 
 
 
-  <title>iOS OC 为button添加下划线 | 吴戈的博客</title>
+  <title>iOS10 OC 获取WIFI的SSID等信息 | 吴戈的博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -244,7 +244,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/05/28/iOS-OC-为button添加下划线/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/05/28/iOS10-OC-获取WIFI的SSID等信息/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wougle">
@@ -261,7 +261,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS OC 为button添加下划线</h1>
+          <h1 class="post-title" itemprop="name headline">iOS10 OC 获取WIFI的SSID等信息</h1>
         
 
         <div class="post-meta">
@@ -273,7 +273,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-28T21:08:42+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-28T21:48:42+08:00">
                 2017-05-28
               </time>
             
@@ -308,13 +308,11 @@
       
 
       
-        <p>最近做的一个项目里需要在button里的titleLable里添加下滑线，自己搞了半小时，重写了个button。</p>
-<p>贴代码：</p>
-<p><strong>UnderlineButton.h</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#import&lt;UIKit/UIKit.h&gt;</div><div class="line"></div><div class="line">  @interface UnderlineButton : UIButton</div><div class="line"></div><div class="line"></div><div class="line">  &#123;</div><div class="line"></div><div class="line"></div><div class="line">  UIColor *lineColor;</div><div class="line"></div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">  -(void)setColor:(UIColor*)color;</div><div class="line"> </div><div class="line"></div><div class="line">  @end</div></pre></td></tr></table></figure>
-<p><strong>UnderlineButton.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">#import &quot;UnderlineButton.h&quot;</div><div class="line"></div><div class="line"></div><div class="line">@implementation UnderlineButton</div><div class="line"></div><div class="line"> - (id)initWithFrame:(CGRect)frame</div><div class="line"></div><div class="line"></div><div class="line"> &#123;</div><div class="line"></div><div class="line"></div><div class="line"> self = [super initWithFrame:frame];</div><div class="line"></div><div class="line"></div><div class="line"> if (self) &#123;</div><div class="line"></div><div class="line"></div><div class="line"> &#125;</div><div class="line"></div><div class="line"></div><div class="line"> return self;</div><div class="line"></div><div class="line"></div><div class="line"> &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"> -(void)setColor:(UIColor *)color&#123;</div><div class="line"></div><div class="line"></div><div class="line"> lineColor = [color copy];</div><div class="line"></div><div class="line"></div><div class="line"> [self setNeedsDisplay];</div><div class="line"></div><div class="line"></div><div class="line"> &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"> - (void) drawRect:(CGRect)rect &#123;</div><div class="line"></div><div class="line"></div><div class="line"> CGRect textRect = self.titleLabel.frame;</div><div class="line"></div><div class="line"></div><div class="line"> CGContextRef contextRef = UIGraphicsGetCurrentContext();</div><div class="line"></div><div class="line"></div><div class="line"> CGFloat descender = self.titleLabel.font.descender;</div><div class="line"></div><div class="line"></div><div class="line"> if([lineColor isKindOfClass:[UIColor class]])&#123;</div><div class="line"></div><div class="line"></div><div class="line"> CGContextSetStrokeColorWithColor(contextRef, lineColor.CGColor);</div><div class="line"></div><div class="line"></div><div class="line"> &#125;</div><div class="line"></div><div class="line"></div><div class="line"> CGContextMoveToPoint(contextRef, textRect.origin.x, textRect.origin.y + textRect.size.height + descender+1);</div><div class="line"></div><div class="line"></div><div class="line"> CGContextAddLineToPoint(contextRef, textRect.origin.x + textRect.size.width, textRect.origin.y + textRect.size.height + descender+1);</div><div class="line"></div><div class="line"></div><div class="line"> CGContextClosePath(contextRef);</div><div class="line"></div><div class="line"></div><div class="line"> CGContextDrawPath(contextRef, kCGPathStroke);</div><div class="line"></div><div class="line"></div><div class="line"> &#125;</div><div class="line"></div><div class="line"></div><div class="line"> @end</div></pre></td></tr></table></figure>
-<p>直接复制粘贴即可。</p>
+        <p>首先添加框架:SystemConfiguration.framework</p>
+<p>然后引用#import<systemconfiguration captivenetwork.h=""></systemconfiguration></p>
+<p>剩下的就是代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (NSString *)currentWifiSSID &#123;</div><div class="line"></div><div class="line">NSString *ssid = nil;</div><div class="line"></div><div class="line">NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();</div><div class="line"></div><div class="line">for (NSString *ifnam in ifs) &#123;</div><div class="line"></div><div class="line">NSDictionary *info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);</div><div class="line"></div><div class="line">if (info[@&quot;SSID&quot;]) &#123;</div><div class="line"></div><div class="line">ssid = info[@&quot;SSID&quot;];</div><div class="line"></div><div class="line">&#125;&#125;</div><div class="line"></div><div class="line">return ssid;&#125;</div></pre></td></tr></table></figure>
+<p>值得一提的事，获取ssid必须在真机上，模拟器上不行。</p>
 
       
     </div>
@@ -357,8 +355,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/24/iOS-OC-property的属性理解/" rel="next" title="iOS OC @property的属性理解">
-                <i class="fa fa-chevron-left"></i> iOS OC @property的属性理解
+              <a href="/2017/05/28/iOS-OC-为button添加下划线/" rel="next" title="iOS OC 为button添加下划线">
+                <i class="fa fa-chevron-left"></i> iOS OC 为button添加下划线
               </a>
             
           </div>
@@ -366,10 +364,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/28/iOS10-OC-获取WIFI的SSID等信息/" rel="prev" title="iOS10 OC 获取WIFI的SSID等信息">
-                iOS10 OC 获取WIFI的SSID等信息 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

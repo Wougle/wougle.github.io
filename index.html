@@ -271,6 +271,157 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/06/03/iOS-OC-设置透明navigationBar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wougle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/Loc.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴戈的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/03/iOS-OC-设置透明navigationBar/" itemprop="url">iOS OC 设置透明navigationBar</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-03T18:58:14+08:00">
+                2017-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/06/03/iOS-OC-设置透明navigationBar/" class="leancloud_visitors" data-flag-title="iOS OC 设置透明navigationBar">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近做项目遇到一种需求: 需要将navigationBar设置为透明。效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4876453-c2502f2ec799100d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>我的做法是先隐藏原来的navigation:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.navigationController.navigationBarHidden = YES;</div></pre></td></tr></table></figure>
+<p>然后添加一个navigationBar：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//添加一个UINavigationBar</div><div class="line"></div><div class="line">CGRect screenRect = [[UIScreen mainScreen] bounds];</div><div class="line"></div><div class="line">imageNavigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, screenRect.size.width, 64)];</div><div class="line"></div><div class="line">[self.view addSubview: imageNavigationBar];</div><div class="line"></div><div class="line">//往imageNavigationBar上设置背景图</div><div class="line"></div><div class="line">UIImage *barImage = [UIImage imageNamed:@&quot;bg_home_nav&quot;];</div><div class="line"></div><div class="line">UIImage *scaleBarImage = [[UIImage alloc] init];</div><div class="line"></div><div class="line">scaleBarImage = [scaleBarImage image:barImage byScalingToSize:CGSizeMake(SCREEN_WIDTH, 64)];</div><div class="line"></div><div class="line">[imageNavigationBar setBackgroundImage:scaleBarImage forBarMetrics:UIBarMetricsDefault];</div><div class="line"></div><div class="line">imageNavigationBar.shadowImage = [UIImage new];</div><div class="line"></div><div class="line">imageNavigationBar.translucent = NO;</div></pre></td></tr></table></figure>
+<p>gotta</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/05/31/Swift-集合操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1655,7 +1806,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -90,17 +90,20 @@
 
 
 
-<meta name="description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
+<meta name="description" content="CALayer 有一个属性叫做 contents ，这个属性的类型被定义为id，意味着它可以 是任何类型的对象。在这种情况下，你可以给   属性赋任何值，你的app 仍然能够编译通过。但是，在实践中，如果你给   赋的不是CGImage， 那么你得到的图层将是空白的。contents 这个奇怪的表现是由Mac OS的历史原因造成的。它之所以被定义为id 类型，是因为在Mac OS系统上，这个属性对">
 <meta name="keywords" content="objective-c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS OC 设置View阴影">
-<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/index.html">
+<meta property="og:title" content="iOS OC 利用CALayer向UIView中添加UIImage">
+<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-利用CALayer向UIView中添加UIImage/index.html">
 <meta property="og:site_name" content="吴戈的博客">
-<meta property="og:description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
-<meta property="og:updated_time" content="2017-07-08T01:36:41.000Z">
+<meta property="og:description" content="CALayer 有一个属性叫做 contents ，这个属性的类型被定义为id，意味着它可以 是任何类型的对象。在这种情况下，你可以给   属性赋任何值，你的app 仍然能够编译通过。但是，在实践中，如果你给   赋的不是CGImage， 那么你得到的图层将是空白的。contents 这个奇怪的表现是由Mac OS的历史原因造成的。它之所以被定义为id 类型，是因为在Mac OS系统上，这个属性对">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4876453-498633f4d1923f6f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4876453-6d50b46df0632b31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-08T01:52:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS OC 设置View阴影">
-<meta name="twitter:description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
+<meta name="twitter:title" content="iOS OC 利用CALayer向UIView中添加UIImage">
+<meta name="twitter:description" content="CALayer 有一个属性叫做 contents ，这个属性的类型被定义为id，意味着它可以 是任何类型的对象。在这种情况下，你可以给   属性赋任何值，你的app 仍然能够编译通过。但是，在实践中，如果你给   赋的不是CGImage， 那么你得到的图层将是空白的。contents 这个奇怪的表现是由Mac OS的历史原因造成的。它之所以被定义为id 类型，是因为在Mac OS系统上，这个属性对">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4876453-498633f4d1923f6f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -128,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/"/>
+  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-利用CALayer向UIView中添加UIImage/"/>
 
 
 
 
 
-  <title>iOS OC 设置View阴影 | 吴戈的博客</title>
+  <title>iOS OC 利用CALayer向UIView中添加UIImage | 吴戈的博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +277,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-利用CALayer向UIView中添加UIImage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wougle">
@@ -291,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS OC 设置View阴影</h1>
+          <h1 class="post-title" itemprop="name headline">iOS OC 利用CALayer向UIView中添加UIImage</h1>
         
 
         <div class="post-meta">
@@ -303,7 +306,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T09:35:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T09:51:26+08:00">
                 2017-07-08
               </time>
             
@@ -343,7 +346,7 @@
 
           
           
-             <span id="/2017/07/08/iOS-OC-设置View阴影/" class="leancloud_visitors" data-flag-title="iOS OC 设置View阴影">
+             <span id="/2017/07/08/iOS-OC-利用CALayer向UIView中添加UIImage/" class="leancloud_visitors" data-flag-title="iOS OC 利用CALayer向UIView中添加UIImage">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -371,7 +374,28 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">UIView *view = [[UIView alloc] init];</div><div class="line"></div><div class="line">view = [UIColor RedColor].CGColor;//shadowColor阴影颜色</div><div class="line"></div><div class="line">view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用</div><div class="line"></div><div class="line">view.layer.shadowOpacity = 0.8;//阴影透明度，默认0</div><div class="line"></div><div class="line">view.layer.shadowRadius = 1;//阴影半径，默认3</div></pre></td></tr></table></figure>
+        <p>CALayer 有一个属性叫做 contents ，这个属性的类型被定义为id，意味着它可以 是任何类型的对象。在这种情况下，你可以给   属性赋任何值，你的app 仍然能够编译通过。但是，在实践中，如果你给   赋的不是CGImage， 那么你得到的图层将是空白的。<br>contents 这个奇怪的表现是由Mac OS的历史原因造成的。它之所以被定义为id 类型，是因为在Mac OS系统上，这个属性对CGImage和NSImage类型的值都起作 用。如果你试图在iOS平台上将UIImage的值赋给它，只能得到一个空白的图层。 一些初识Core Animation的iOS开发者可能会对这个感到困惑。<br>头疼的不仅仅是我们刚才提到的这个问题。事实上，你真正要赋值的类型应该是 CGImageRef，它是一个指向CGImage结构的指针。UIImage有一个CGImage属 性，它返回一个”CGImageRef”,如果你想把这个值直接赋值给CALayer<br>的 contents ，那你将会得到一个编译错误。因为CGImageRef并不是一个真正的 Cocoa对象，而是一个Core Foundation类型。<br>尽管Core Foundation类型跟Cocoa对象在运行时貌似很像(被称作toll-free bridging)，他们并不是类型兼容的，不过你可以通过bridged关键字转换。如果要 给图层的寄宿图赋值，你可以按照以下这个方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">layer.contents = (__bridge id)image.CGImage;</div></pre></td></tr></table></figure>
+<p>我们先初始化一个UIView命名为layerView，当然你可以利用xib或者StoryBoard拖一个，因为我们已经用代码的方式建立一个图层，那我们就不需要额外的图层了。 那么我们就直接把layerView的宿主图层的 contents 属性设置成图片。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@implementation ViewController</div><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">  [super viewDidLoad]; //load an image</div><div class="line">  UIImage *image = [UIImage imageNamed:@&quot;test&quot;];</div><div class="line">  //add it directly to our view&apos;s layer</div><div class="line">  self.layerView.layer.contents = (__bridge id)image.CGImage;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure></p>
+<p>效果如图<br><img src="http://upload-images.jianshu.io/upload_images/4876453-498633f4d1923f6f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>大家会发现，图片会被拉伸，那么我们该如何来修改呢？<br>我们加载的图片并不 刚好是一个方的，为了适应这个视图，它有一点点被拉伸了。在使用UIImageView 的时候遇到过同样的问题，解决方法就是把 contentMode 属性设置成更合适的值。这个方法基本和我们遇到的情况的解决方法已经接近了(你可以试一下 :) )，不过 UIView大多数视觉相关的属性比如 contentMode ，对这些属性的操作其实是对对 应图层的操作。<br>CALayer与 contentMode 对应的属性叫做 contentsGravity ，但是它是一个 NSString类型，而不是像对应的UIKit部分，那里面的值是枚<br>举。 contentsGravity 可选的常量值有以下一些:</p>
+<ul>
+<li>kCAGravityCenter </li>
+<li>kCAGravityTop</li>
+<li>kCAGravityBottom</li>
+<li>kCAGravityLeft</li>
+<li>kCAGravityRight</li>
+<li>kCAGravityTopLeft</li>
+<li>kCAGravityTopRight</li>
+<li>kCAGravityBottomLeft</li>
+<li>kCAGravityBottomRight</li>
+<li>kCAGravityResize</li>
+<li>kCAGravityResizeAspect</li>
+<li>kCAGravityResizeAspectFill</li>
+</ul>
+<p>和 cotentMode 一样， contentsGravity 的目的是为了决定内容在图层的边界 中怎么对齐，我们将使用kCAGravityResizeAspect，它的效果等同于 UIViewContentModeScaleAspectFit， 同时它还能在图层中等比例拉伸以适应图层 的边界。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.layerView.layer.contentsGravity = kCAGravityResizeAspect;</div></pre></td></tr></table></figure>
+<p>效果如图<br><img src="http://upload-images.jianshu.io/upload_images/4876453-6d50b46df0632b31.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
     </div>
@@ -414,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/08/iOS-OC-取消navagationBar下的黑线/" rel="next" title="iOS OC 取消navagationBar下的黑线">
-                <i class="fa fa-chevron-left"></i> iOS OC 取消navagationBar下的黑线
+              <a href="/2017/07/08/iOS-OC-设置应用内的系统控件语言/" rel="next" title="iOS OC 设置应用内的系统控件语言">
+                <i class="fa fa-chevron-left"></i> iOS OC 设置应用内的系统控件语言
               </a>
             
           </div>
@@ -424,8 +448,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/08/iOS-OC-懒加载/" rel="prev" title="iOS OC 懒加载">
-                iOS OC 懒加载 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/08/iOS-阴影简介/" rel="prev" title="iOS 阴影简介">
+                iOS 阴影简介 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

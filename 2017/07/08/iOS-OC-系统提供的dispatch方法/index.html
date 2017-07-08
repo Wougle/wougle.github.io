@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
+<meta name="description" content="#####为了方便地使用GCD，苹果提供了一些方法方便我们将block放在主线程或者后台线程执行，或者延后执行。使用的例子如下所示： 1234567891011121314151617181920//后台执行 dispatch_async(dispatch_get_global_queue(0, 0), ^&amp;#123;     // something &amp;#125;);  //主线程执行 disp">
 <meta name="keywords" content="objective-c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS OC 设置View阴影">
-<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/index.html">
+<meta property="og:title" content="iOS OC 系统提供的dispatch方法">
+<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-系统提供的dispatch方法/index.html">
 <meta property="og:site_name" content="吴戈的博客">
-<meta property="og:description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
-<meta property="og:updated_time" content="2017-07-08T01:36:41.000Z">
+<meta property="og:description" content="#####为了方便地使用GCD，苹果提供了一些方法方便我们将block放在主线程或者后台线程执行，或者延后执行。使用的例子如下所示： 1234567891011121314151617181920//后台执行 dispatch_async(dispatch_get_global_queue(0, 0), ^&amp;#123;     // something &amp;#125;);  //主线程执行 disp">
+<meta property="og:updated_time" content="2017-07-08T01:49:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS OC 设置View阴影">
-<meta name="twitter:description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
+<meta name="twitter:title" content="iOS OC 系统提供的dispatch方法">
+<meta name="twitter:description" content="#####为了方便地使用GCD，苹果提供了一些方法方便我们将block放在主线程或者后台线程执行，或者延后执行。使用的例子如下所示： 1234567891011121314151617181920//后台执行 dispatch_async(dispatch_get_global_queue(0, 0), ^&amp;#123;     // something &amp;#125;);  //主线程执行 disp">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/"/>
+  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-系统提供的dispatch方法/"/>
 
 
 
 
 
-  <title>iOS OC 设置View阴影 | 吴戈的博客</title>
+  <title>iOS OC 系统提供的dispatch方法 | 吴戈的博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-系统提供的dispatch方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wougle">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS OC 设置View阴影</h1>
+          <h1 class="post-title" itemprop="name headline">iOS OC 系统提供的dispatch方法</h1>
         
 
         <div class="post-meta">
@@ -303,7 +303,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T09:35:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T09:49:32+08:00">
                 2017-07-08
               </time>
             
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2017/07/08/iOS-OC-设置View阴影/" class="leancloud_visitors" data-flag-title="iOS OC 设置View阴影">
+             <span id="/2017/07/08/iOS-OC-系统提供的dispatch方法/" class="leancloud_visitors" data-flag-title="iOS OC 系统提供的dispatch方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -371,7 +371,9 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">UIView *view = [[UIView alloc] init];</div><div class="line"></div><div class="line">view = [UIColor RedColor].CGColor;//shadowColor阴影颜色</div><div class="line"></div><div class="line">view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用</div><div class="line"></div><div class="line">view.layer.shadowOpacity = 0.8;//阴影透明度，默认0</div><div class="line"></div><div class="line">view.layer.shadowRadius = 1;//阴影半径，默认3</div></pre></td></tr></table></figure>
+        <p>#####为了方便地使用GCD，苹果提供了一些方法方便我们将block放在主线程或者后台线程执行，或者延后执行。使用的例子如下所示：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//后台执行</div><div class="line"> dispatch_async(dispatch_get_global_queue(0, 0), ^&#123;</div><div class="line">     // something</div><div class="line"> &#125;);</div><div class="line"> </div><div class="line"> //主线程执行</div><div class="line"> dispatch_async(dispatch_get_main_queue(), ^&#123;</div><div class="line">     // something</div><div class="line"> &#125;);</div><div class="line"> </div><div class="line"> //一次性执行</div><div class="line"> static dispatch_once_t onceToken;</div><div class="line"> dispatch_once(&amp;onceToken, ^&#123;</div><div class="line">     // code to be executed once</div><div class="line"> &#125;);</div><div class="line"> </div><div class="line"> //延迟2秒执行</div><div class="line"> dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">     // code to be executed after a specified delay</div><div class="line"> &#125;);</div></pre></td></tr></table></figure></p>
+<p>#####dispatch_queue_t也可以自己定义，如果要自定义queue，可以用dispatch_queue_create方法，示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dispatch_queue_t urls_queue = dispatch_queue_create(&quot;&quot;, NULL);</div><div class="line">    dispatch_async(urls_queue, ^&#123;</div><div class="line">        // your code</div><div class="line">    &#125;);</div><div class="line">    //dispatch_release(urls_queue);</div></pre></td></tr></table></figure></p>
+<p>#####另外，GCD还有一些高级用法，例如让后台两个线程并行执行，然后等两个线程都结束后，再汇总结果。这个可以用dispatch_group，dispatch_group_async和dispatch_group_notify来实现，示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">dispatch_group_t group = dispatch_group_create();</div><div class="line">    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^&#123;</div><div class="line">        //并行执行的线程一</div><div class="line">    &#125;);</div><div class="line">    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^&#123;</div><div class="line">        //并行执行的线程二</div><div class="line">    &#125;);</div><div class="line">    dispatch_group_notify(group, dispatch_get_global_queue(0, 0), ^&#123;</div><div class="line">        //汇总结果</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -414,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/08/iOS-OC-取消navagationBar下的黑线/" rel="next" title="iOS OC 取消navagationBar下的黑线">
-                <i class="fa fa-chevron-left"></i> iOS OC 取消navagationBar下的黑线
+              <a href="/2017/07/08/iOS-OC-代码片段在文件夹位置/" rel="next" title="iOS OC 代码片段在文件夹位置">
+                <i class="fa fa-chevron-left"></i> iOS OC 代码片段在文件夹位置
               </a>
             
           </div>
@@ -424,8 +426,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/08/iOS-OC-懒加载/" rel="prev" title="iOS OC 懒加载">
-                iOS OC 懒加载 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/08/iOS-OC-收起键盘的三种方法/" rel="prev" title="iOS OC 收起键盘的三种方法">
+                iOS OC 收起键盘的三种方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

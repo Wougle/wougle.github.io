@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
+<meta name="description" content="大家都知道，一旦把控件的masksToBounds属性设置为YES，那么控件的多余部分将被裁减。那如果我们需要在控件masksToBounds属性为YES的基础上添加阴影该怎么办呢？ 我想到的方法是，为该控件添加一层CALayer。代码如下  - (void)setMidBaseView:(UIView *)midBaseView{ midBaseView.layer.cornerRadius =">
 <meta name="keywords" content="objective-c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS OC 设置View阴影">
-<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/index.html">
+<meta property="og:title" content="iOS OC 如何为masksToBounds = YES的View添加阴影">
+<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-如何为masksToBounds-YES的View添加阴影/index.html">
 <meta property="og:site_name" content="吴戈的博客">
-<meta property="og:description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
-<meta property="og:updated_time" content="2017-07-08T01:36:41.000Z">
+<meta property="og:description" content="大家都知道，一旦把控件的masksToBounds属性设置为YES，那么控件的多余部分将被裁减。那如果我们需要在控件masksToBounds属性为YES的基础上添加阴影该怎么办呢？ 我想到的方法是，为该控件添加一层CALayer。代码如下  - (void)setMidBaseView:(UIView *)midBaseView{ midBaseView.layer.cornerRadius =">
+<meta property="og:updated_time" content="2017-07-08T01:47:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS OC 设置View阴影">
-<meta name="twitter:description" content="123456789UIView *view = [[UIView alloc] init];view = [UIColor RedColor].CGColor;//shadowColor阴影颜色view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使">
+<meta name="twitter:title" content="iOS OC 如何为masksToBounds = YES的View添加阴影">
+<meta name="twitter:description" content="大家都知道，一旦把控件的masksToBounds属性设置为YES，那么控件的多余部分将被裁减。那如果我们需要在控件masksToBounds属性为YES的基础上添加阴影该怎么办呢？ 我想到的方法是，为该控件添加一层CALayer。代码如下  - (void)setMidBaseView:(UIView *)midBaseView{ midBaseView.layer.cornerRadius =">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/"/>
+  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-如何为masksToBounds-YES的View添加阴影/"/>
 
 
 
 
 
-  <title>iOS OC 设置View阴影 | 吴戈的博客</title>
+  <title>iOS OC 如何为masksToBounds = YES的View添加阴影 | 吴戈的博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-设置View阴影/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-如何为masksToBounds-YES的View添加阴影/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wougle">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS OC 设置View阴影</h1>
+          <h1 class="post-title" itemprop="name headline">iOS OC 如何为masksToBounds = YES的View添加阴影</h1>
         
 
         <div class="post-meta">
@@ -303,7 +303,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T09:35:34+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T09:45:39+08:00">
                 2017-07-08
               </time>
             
@@ -343,7 +343,7 @@
 
           
           
-             <span id="/2017/07/08/iOS-OC-设置View阴影/" class="leancloud_visitors" data-flag-title="iOS OC 设置View阴影">
+             <span id="/2017/07/08/iOS-OC-如何为masksToBounds-YES的View添加阴影/" class="leancloud_visitors" data-flag-title="iOS OC 如何为masksToBounds = YES的View添加阴影">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -371,7 +371,23 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">UIView *view = [[UIView alloc] init];</div><div class="line"></div><div class="line">view = [UIColor RedColor].CGColor;//shadowColor阴影颜色</div><div class="line"></div><div class="line">view.layer.shadowOffset = CGSizeMake(0,1);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用</div><div class="line"></div><div class="line">view.layer.shadowOpacity = 0.8;//阴影透明度，默认0</div><div class="line"></div><div class="line">view.layer.shadowRadius = 1;//阴影半径，默认3</div></pre></td></tr></table></figure>
+        <p>大家都知道，一旦把控件的masksToBounds属性设置为YES，那么控件的多余部分将被裁减。那如果我们需要在控件masksToBounds属性为YES的基础上添加阴影该怎么办呢？</p>
+<p>我想到的方法是，为该控件添加一层CALayer。代码如下</p>
+<blockquote>
+<p><strong>- (void)setMidBaseView:(UIView *)midBaseView{</strong></p>
+<p><strong>midBaseView.layer.cornerRadius = 5.0f;</strong></p>
+<p><strong>midBaseView.layer.masksToBounds = YES;</strong></p>
+<p><strong>CALayer *subLayer = [CALayer layer];</strong></p>
+<p><strong>subLayer.frame = midBaseView.frame</strong></p>
+<p><strong>subLayer.cornerRadius = 5.0f;</strong></p>
+<p><strong>subLayer.backgroundColor = [UIColor clearColor].CGColor;</strong></p>
+<p><strong>subLayer.masksToBounds = NO;</strong></p>
+<p><strong>//todo 设置阴影</strong></p>
+<p><strong>[self.layer insertSublayer:subLayer below:midBaseView.layer];</strong></p>
+<p><strong>_midBaseView = midBaseView;</strong></p>
+<p><strong>}</strong></p>
+</blockquote>
+<p>可以看到，我先为midBaseView添加了圆角，因此，midBaseView的maskToBounds属性已被设置成了YES，然后我为midBaseView添加了一层subLayer，并为此layer设置了阴影，即可达到我们需要的效果～</p>
 
       
     </div>
@@ -414,8 +430,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/08/iOS-OC-取消navagationBar下的黑线/" rel="next" title="iOS OC 取消navagationBar下的黑线">
-                <i class="fa fa-chevron-left"></i> iOS OC 取消navagationBar下的黑线
+              <a href="/2017/07/08/iOS-OC-使用tableView时如何消除staturBar的22像素/" rel="next" title="iOS OC 使用tableView时如何消除staturBar的22像素">
+                <i class="fa fa-chevron-left"></i> iOS OC 使用tableView时如何消除staturBar的22像素
               </a>
             
           </div>
@@ -424,8 +440,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/08/iOS-OC-懒加载/" rel="prev" title="iOS OC 懒加载">
-                iOS OC 懒加载 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/08/iOS-OC-利用iOS8新特性动态计算cell高度/" rel="prev" title="iOS OC 利用iOS8新特性动态计算cell高度">
+                iOS OC 利用iOS8新特性动态计算cell高度 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

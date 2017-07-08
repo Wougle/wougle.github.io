@@ -90,17 +90,20 @@
 
 
 
-<meta name="description" content="说来惭愧，学习iOS近一年，关于@property的基础内容还没有完全搞懂，今天趁有时间做一下记录，勉。 @property @synthesize关键字这两个关键字是编译器特性，让xcode可以自动生成getter和setter的声明和实现。 1.atomic与nonatomic atomic：默认是有该属性的，这个属性是为了保证程序在多线程情况，编译器会自动生成一些互斥加锁代码，避免该变量的读">
+<meta name="description" content="最近做项目，遇到一个问题，详见图  而我想达到的效果UI是这样  那么该如何解决这个问题呢？其实很简单，只要在相关页面添加一行代码：  self.automaticallyAdjustsScrollViewInsets = NO;  这样UIViewController下如果只有一个UIScollView或者其子类，那么会自动留出空白， 让scollview滚动经过各种bar下面时能隐约看到内容。">
 <meta name="keywords" content="objective-c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS OC @property的属性理解">
-<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/05/24/iOS-OC-property的属性理解/index.html">
+<meta property="og:title" content="iOS OC 使用tableView时如何消除staturBar的22像素">
+<meta property="og:url" content="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-使用tableView时如何消除staturBar的22像素/index.html">
 <meta property="og:site_name" content="吴戈的博客">
-<meta property="og:description" content="说来惭愧，学习iOS近一年，关于@property的基础内容还没有完全搞懂，今天趁有时间做一下记录，勉。 @property @synthesize关键字这两个关键字是编译器特性，让xcode可以自动生成getter和setter的声明和实现。 1.atomic与nonatomic atomic：默认是有该属性的，这个属性是为了保证程序在多线程情况，编译器会自动生成一些互斥加锁代码，避免该变量的读">
-<meta property="og:updated_time" content="2017-05-29T03:00:22.000Z">
+<meta property="og:description" content="最近做项目，遇到一个问题，详见图  而我想达到的效果UI是这样  那么该如何解决这个问题呢？其实很简单，只要在相关页面添加一行代码：  self.automaticallyAdjustsScrollViewInsets = NO;  这样UIViewController下如果只有一个UIScollView或者其子类，那么会自动留出空白， 让scollview滚动经过各种bar下面时能隐约看到内容。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4876453-8bd07d512b59d276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/4876453-0b3548d3b405e969.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-07-08T01:39:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS OC @property的属性理解">
-<meta name="twitter:description" content="说来惭愧，学习iOS近一年，关于@property的基础内容还没有完全搞懂，今天趁有时间做一下记录，勉。 @property @synthesize关键字这两个关键字是编译器特性，让xcode可以自动生成getter和setter的声明和实现。 1.atomic与nonatomic atomic：默认是有该属性的，这个属性是为了保证程序在多线程情况，编译器会自动生成一些互斥加锁代码，避免该变量的读">
+<meta name="twitter:title" content="iOS OC 使用tableView时如何消除staturBar的22像素">
+<meta name="twitter:description" content="最近做项目，遇到一个问题，详见图  而我想达到的效果UI是这样  那么该如何解决这个问题呢？其实很简单，只要在相关页面添加一行代码：  self.automaticallyAdjustsScrollViewInsets = NO;  这样UIViewController下如果只有一个UIScollView或者其子类，那么会自动留出空白， 让scollview滚动经过各种bar下面时能隐约看到内容。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/4876453-8bd07d512b59d276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -128,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/05/24/iOS-OC-property的属性理解/"/>
+  <link rel="canonical" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-使用tableView时如何消除staturBar的22像素/"/>
 
 
 
 
 
-  <title>iOS OC @property的属性理解 | 吴戈的博客</title>
+  <title>iOS OC 使用tableView时如何消除staturBar的22像素 | 吴戈的博客</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +277,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/05/24/iOS-OC-property的属性理解/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Wougle/wougle.github.io.git/2017/07/08/iOS-OC-使用tableView时如何消除staturBar的22像素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wougle">
@@ -291,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS OC @property的属性理解</h1>
+          <h1 class="post-title" itemprop="name headline">iOS OC 使用tableView时如何消除staturBar的22像素</h1>
         
 
         <div class="post-meta">
@@ -303,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-24T22:01:42+08:00">
-                2017-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T09:38:30+08:00">
+                2017-07-08
               </time>
             
 
@@ -343,7 +346,7 @@
 
           
           
-             <span id="/2017/05/24/iOS-OC-property的属性理解/" class="leancloud_visitors" data-flag-title="iOS OC @property的属性理解">
+             <span id="/2017/07/08/iOS-OC-使用tableView时如何消除staturBar的22像素/" class="leancloud_visitors" data-flag-title="iOS OC 使用tableView时如何消除staturBar的22像素">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -371,38 +374,17 @@
       
 
       
-        <p>说来惭愧，学习iOS近一年，关于@property的基础内容还没有完全搞懂，今天趁有时间做一下记录，勉。</p>
-<h5 id="property-synthesize关键字"><a href="#property-synthesize关键字" class="headerlink" title="@property @synthesize关键字"></a>@property @synthesize关键字</h5><p>这两个关键字是编译器特性，让xcode可以自动生成getter和setter的声明和实现。</p>
-<p><strong>1.atomic与nonatomic</strong></p>
-<p>atomic：默认是有该属性的，这个属性是为了保证程序在多线程情况，编译器会自动生成一些互斥加锁代码，避免该变量的读写不同步问题。</p>
-<p>nonatomic：如果该对象无需考虑多线程的情况，请加入这个属性，这样会让编译器少生成一些互斥加锁代码，可以提高效率。</p>
-<p><strong>2.readwrite与readonly</strong></p>
-<p>readwrite：这个属性是默认的情况，会自动为你生成存取器。</p>
-<p>readonly：只生成getter不会有setter方法。</p>
-<p>readwrite、readonly这两个属性的真正价值，不是提供成员变量访问接口，而是控制成员变量的访问权限。</p>
-<p><strong>3.strong与weak</strong></p>
-<p>strong：强引用，也是我们通常说的引用，其存亡直接决定了所指向对象的存亡。如果不存在指向一个对象的引用，并且此对象不再显示在列表中，则此对象会被从内存中释放。</p>
-<p>weak：弱引用，不决定对象的存亡。即使一个对象被持有无数个弱引用，只要没有强引用指向它，那么还是会被清除。</p>
-<p>strong与retain功能相似；weak与assign相似，只是当对象消失后weak会自动把指针变为nil;</p>
-<p><strong>4.assign、copy、retain</strong></p>
-<p>assign：默认类型，setter方法直接赋值，不进行任何retain操作，不改变引用计数。一般用来处理基本数据类型。</p>
-<p>retain：释放旧的对象（release），将旧对象的值赋给新对象，再令新对象引用计数为1。我理解为指针的拷贝，拷贝一份原来的指针，释放原来指针指向的对象的内容，再令指针指向新的对象内容。</p>
-<p>copy：与retain处理流程一样，先对旧值release，再copy出新的对象，retainCount为1.为了减少对上下文的依赖而引入的机 制。我理解为内容的拷贝，向内存申请一块空间，把原来的对象内容赋给它，令其引用计数为1。对copy属性要特别注意：被定义有copy属性的对象必须要 符合NSCopying协议，必须实现- (id)copyWithZone:(NSZone *)zone方法。</p>
+        <p>最近做项目，遇到一个问题，详见图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4876453-8bd07d512b59d276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>而我想达到的效果UI是这样</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4876453-0b3548d3b405e969.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>那么该如何解决这个问题呢？其实很简单，只要在相关页面添加一行代码：</p>
 <blockquote>
-<p>『1.</p>
-<p>假设你用malloc分配了一块内存，并且把它的地址赋值给了指针a，后来你希望指针b也共享这块内存，于是你又把a赋值给（assign）了b。此时a和b指向同一块内存，请问当a不再需要这块内存，能否直接释放它？答案是否定的，因为a并不知道b是否还在使用这块内存，如果a释放了，那么b在使用这块内存的时候会引起程序crash掉。</p>
-<p>2.了解到1中assign的问题，那么如何解决？最简单的一个方法就是使用引用计数（reference counting），还是上面的那个例子，我们给那块内存设一个引用计数，当内存被分配并且赋值给a时，引用计数是1。当把a赋值给b时引用计数增加到2。这时如果a不再使用这块内存，它只需要把引用计数减1，表明自己不再拥有这块内存。b不再使用这块内存时也把引用计数减1。当引用计数变为0的时候，代表该内存不再被任何指针所引用，系统可以把它直接释放掉。</p>
-<p>3.上面两点其实就是assign和retain的区别，assign就是直接赋值，从而可能引起1中的问题，当数据为int, float等原生类型时，可以使用assign。retain就如2中所述，使用了引用计数，retain引起引用计数加1, release引起引用计数减1，当引用计数为0时，dealloc函数被调用，内存被回收。</p>
-<p>4.copy是在你不希望a和b共享一块内存时会使用到。a和b各自有自己的内存。』</p>
+<p>self.automaticallyAdjustsScrollViewInsets = NO;</p>
 </blockquote>
-<p>也可以直接使用：</p>
-<p>使用assign: 对基础数据类型 （NSInteger，CGFloat）和C数据类型（int, float, double, char, 等等）</p>
-<p>使用copy： 对NSString</p>
-<p>使用retain： 对其他NSObject和其子类</p>
-<p>5.getter setter</p>
-<p>getter：是用来指定get方法的方法名</p>
-<p>setter：是用来指定set访求的方法名</p>
-<p>部分内容转自：<a href="http://www.lvtao.net/ios/504.html" target="_blank" rel="external">http://www.lvtao.net/ios/504.html</a></p>
+<p>这样UIViewController下如果只有一个UIScollView或者其子类，那么会自动留出空白，</p>
+<p>让scollview滚动经过各种bar下面时能隐约看到内容。</p>
+<p>BTW 最近有点忙，花在博客上的时间变少了。</p>
 
       
     </div>
@@ -445,8 +427,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/23/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/07/08/iOS-OC-第三方代码使用ARC所遇到的问题/" rel="next" title="iOS OC 第三方代码使用ARC所遇到的问题">
+                <i class="fa fa-chevron-left"></i> iOS OC 第三方代码使用ARC所遇到的问题
               </a>
             
           </div>
@@ -454,10 +436,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/28/iOS-OC-为button添加下划线/" rel="prev" title="iOS OC 为button添加下划线">
-                iOS OC 为button添加下划线 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -506,17 +484,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/Loc.JPG"
@@ -598,22 +567,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#property-synthesize关键字"><span class="nav-number">1.</span> <span class="nav-text">@property @synthesize关键字</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
